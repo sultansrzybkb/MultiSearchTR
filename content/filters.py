@@ -2,8 +2,6 @@ from rest_framework import filters
 from django.db.models import Q, Func
 from .utils import normalize_query
 
-class Unaccent(Func):
-    function = 'unaccent'
 
 class CustomSearchFilter(filters.SearchFilter):
     def filter_queryset(self, request, queryset, view):
