@@ -13,5 +13,5 @@ class CustomSearchFilter(filters.SearchFilter):
                 Q(translations__title__unaccent__icontains=normalized_query)  |
                 Q(translations__content__unaccent__icontains=normalized_query)
             )
-            print()
+           
         return queryset
