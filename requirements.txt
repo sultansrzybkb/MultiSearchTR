@@ -1,0 +1,7 @@
+Django
+djangorestframework
+django-parler
+psycopg[binary]
+python-dotenv
+setuptools
+unidecode
