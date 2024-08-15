@@ -42,8 +42,8 @@ LANGUAGES = (
 
 PARLER_LANGUAGES = {
     None: (
-        {'code': 'tr'},
         {'code': 'en'},
+        {'code': 'tr'},
     ),
     'default': {
         'fallbacks': ['tr','en'],  

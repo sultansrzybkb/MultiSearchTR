@@ -7,10 +7,10 @@ from content.documents import ArticleDocument
 from content.filters import CustomSearchFilter
 from django_elasticsearch_dsl_drf.filter_backends import FilteringFilterBackend, OrderingFilterBackend, DefaultOrderingFilterBackend, SearchFilterBackend
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
-
+from django_elasticsearch_dsl_drf.constants import SUGGESTER_COMPLETION
 from .documents import ArticleDocument
 from .serializers import ArticleDocumentSerializer
-
+from django_elasticsearch_dsl_drf.filter_backends import SuggesterFilterBackend
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
 
 class ArticleViewSet(viewsets.ModelViewSet):
@@ -29,7 +29,8 @@ class ArticleDocumentView(DocumentViewSet):
         OrderingFilterBackend,
         DefaultOrderingFilterBackend,
         SearchFilterBackend,
-       
+        SuggesterFilterBackend
+        
     ]
     
     
@@ -49,4 +50,11 @@ class ArticleDocumentView(DocumentViewSet):
         'created_at': 'created_at',
     }
 
-    ordering = ('id',)
+    suggester_fields = {
+        'title': {
+            'field': 'title.suggest',
+            'suggesters': [
+                SUGGESTER_COMPLETION,
+            ],
+        },
+    }
