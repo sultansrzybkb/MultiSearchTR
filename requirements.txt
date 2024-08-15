@@ -5,3 +5,5 @@ psycopg[binary]
 python-dotenv
 setuptools
 unidecode
+elasticsearch-dsl==7.3.0
+django-elasticsearch-dsl-drf==0.22.5
