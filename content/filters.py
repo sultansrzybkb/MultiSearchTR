@@ -2,7 +2,6 @@ from rest_framework import filters
 from django.db.models import Q, Func
 from .utils import normalize_query
 
-
 class CustomSearchFilter(filters.SearchFilter):
     def filter_queryset(self, request, queryset, view):
         search_param = request.query_params.get('search', None)
@@ -15,3 +14,4 @@ class CustomSearchFilter(filters.SearchFilter):
             )
            
         return queryset
+    

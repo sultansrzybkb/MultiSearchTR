@@ -10,9 +10,9 @@ from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
 
 from .documents import ArticleDocument
 from .serializers import ArticleDocumentSerializer
-from django_elasticsearch_dsl_drf.filter_backends import SuggesterFilterBackend
+
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
-from django_elasticsearch_dsl_drf.constants import SUGGESTER_COMPLETION
+
 class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
@@ -29,22 +29,18 @@ class ArticleDocumentView(DocumentViewSet):
         OrderingFilterBackend,
         DefaultOrderingFilterBackend,
         SearchFilterBackend,
+       
     ]
     
     
     search_fields = (
         'title',
         'content',
-        
-        'translations.title',
-        'translations.content',
     )
 
     filter_fields = {
         'title': 'title',
         'content': 'content',
-        'translations.title': 'translations.title',
-        'translations.content': 'translations.content',
     }
 
  
