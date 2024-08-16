@@ -25,24 +25,19 @@ Update the database settings in the settings.py file according to your PostgreSQ
 Elasticsearch
 Start Elasticsearch using Docker Compose:
 
-bash
-Copy code
+
 docker-compose up -d
 You can check if Elasticsearch is running by visiting the following URL: http://localhost:9200
 
 Integrate Elasticsearch with Django
 Install the necessary packages:
 
-bash
-Copy code
 pip install django-elasticsearch-dsl django-elasticsearch-dsl-drf
 Build Elasticsearch Indexes
-bash
-Copy code
+
 python manage.py search_index --rebuild
 Start the Server
-bash
-Copy code
+
 python manage.py runserver
 Usage (Main)
 Multilingual Content Management: Users can create content in both Turkish and English using django-parler.
