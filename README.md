@@ -19,3 +19,5 @@ This project is a web application built using Django that features a multilingua
 Usage:
 Multilingual Content Management: Users can create content in both Turkish and English using django-parler.
 Turkish Character Compatible Search: Searches can be performed with Turkish character compatibility by using the "unaccent" extension in PostgreSQL and custom search functions.
+
+Document: https://docs.google.com/document/d/16rKMARoRDoqStJbgPEYiWJQFqPORWnDKkVr_V850Dg8/edit?usp=sharing
